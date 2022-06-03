@@ -11,8 +11,6 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Smart Home Control and Monitoring System</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="images/fav.png">
 </head>
 
 
@@ -47,7 +45,7 @@
     <main style="min-height: calc(100vh - 56px - 64px);">
         <div>
             <h2 style="padding: 50px 0px 0px 40px;">
-                Gas Detection: <span id="gas_val"></span><br><br>
+                Gas Detection: <span id="gas_value"></span><br><br>
             </h2>
         </div>
         </main>
@@ -71,11 +69,11 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("gas_val").innerHTML =
+          document.getElementById("gas_value").innerHTML =
           this.responseText;
         }
       };
-      xhttp.open("GET", "gas", true);
+      xhttp.open("GET", "gas0", true);
       xhttp.send();
     }
     </script>
