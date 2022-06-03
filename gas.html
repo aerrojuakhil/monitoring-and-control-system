@@ -47,7 +47,7 @@
     <main style="min-height: calc(100vh - 56px - 64px);">
         <div>
             <h2 style="padding: 50px 0px 0px 40px;">
-                Gas Detection: <span id="gasvalue"></span><br><br>
+                Fire Detection: <span id="flame_val"></span><br><br>
             </h2>
         </div>
         </main>
@@ -71,7 +71,7 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("gasvalue").innerHTML =
+          document.getElementById("flame_val").innerHTML =
           this.responseText;
         }
       };
