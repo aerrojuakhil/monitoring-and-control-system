@@ -34,7 +34,7 @@
                         <a class="nav-link" href="motion.html">Motion Detection</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="fire.html">Fire Detection</a>
+                        <a class="nav-link" aria-current="page" href="fire.html">Fire Detection</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gas.html">Harmful Gas Detection</a>
@@ -47,7 +47,7 @@
     <main style="min-height: calc(100vh - 56px - 64px);">
         <div>
             <h2 style="padding: 50px 0px 0px 40px;">
-                Gas Detection: <span id="flame_val"></span><br><br>
+                Gas Detection: <span id="gas_val"></span><br><br>
             </h2>
         </div>
         </main>
@@ -71,11 +71,11 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("flame_val").innerHTML =
+          document.getElementById("gas_val").innerHTML =
           this.responseText;
         }
       };
-      xhttp.open("GET", "flame", true);
+      xhttp.open("GET", "gas", true);
       xhttp.send();
     }
     </script>
