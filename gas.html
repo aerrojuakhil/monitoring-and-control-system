@@ -68,8 +68,7 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("gas_val").innerHTML =
-          this.responseText;
+          document.getElementById("gas_val").innerHTML = "Rohan";
         }
       };
       xhttp.open("GET", "gas", true);
