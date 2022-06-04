@@ -11,8 +11,6 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Smart Home Control and Monitoring System</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="images/fav.png">
 </head>
 
 
@@ -34,20 +32,20 @@
                         <a class="nav-link" href="motion.html">Motion Detection</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="fire.html">Fire Detection</a>
+                        <a class="nav-link" href="fire.html">Fire Detection</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gas.html">Harmful Gas Detection</a>
+                        <a class="nav-link active" aria-current="page" href="gas.html">Harmful Gas Detection</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
+    
     <main style="min-height: calc(100vh - 56px - 64px);">
         <div>
             <h2 style="padding: 50px 0px 0px 40px;">
-                Fire Detection: <span id="flame_val"></span><br><br>
+                Harmful Gas Detection: <span id="gas_val"></span><br><br>
             </h2>
         </div>
         </main>
@@ -56,7 +54,6 @@
                     &copy;Veda Manjunath Akhil
                 </div>
             </footer>
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -71,11 +68,11 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("flame_val").innerHTML =
+          document.getElementById("gas_val").innerHTML =
           this.responseText;
         }
       };
-      xhttp.open("GET", "flame", true);
+      xhttp.open("GET", "gas", true);
       xhttp.send();
     }
     </script>
