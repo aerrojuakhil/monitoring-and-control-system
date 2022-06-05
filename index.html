@@ -11,6 +11,8 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Smart Home Control and Monitoring System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/fav.png">
 </head>
 <style>
     button {
@@ -24,6 +26,14 @@
         color: white;
         background-color: #0D6EFD;
         transition: 0.3s;
+    }
+    main{
+        min-height: calc(100vh - 56px - 64px);
+    }
+    @media screen and (max-width: 480px) {
+        main{
+        min-height: calc(100vh - 112px - 64px);
+    }
     }
 </style>
 
@@ -54,7 +64,7 @@
             </div>
         </div>
     </nav>
-    <main style="min-height: calc(100vh - 56px - 64px);">
+    <main>
         <center style="padding-top: 10%;">
             <div style="text-align: center;">
                 <h3>Led 1:</h3>
