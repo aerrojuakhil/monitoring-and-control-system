@@ -96,7 +96,7 @@
                     document.getElementById("state").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "state=" + c, true);
+            xhttp.open("GET", "Led1?state1=" + c, true);
             xhttp.send();
             if (c == 0) {
 
@@ -118,7 +118,7 @@
                     document.getElementById("state1").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "state1=" + x, true);
+            xhttp.open("GET", "Led2?state1=" + x, true);
             xhttp.send();
             if (x == 0) {
 
