@@ -66,11 +66,11 @@
         <center style="padding-top: 10%;">
             <div style="text-align: center;">
                 <h3>Led 1:</h3>
-                <button id="button1" onclick="send()">Turn OFF</button><br>
-                LED State: <span id="state">NA</span><br><br>
+                <button id="button1" onclick="send1()">Turn OFF</button><br>
+                LED State: <span id="state1">NA</span><br><br>
                 <h3>Led 2:</h3>
-                <button id="button2" onclick="send1()">Turn OFF</button><br>
-                LED State: <span id="state1">NA</span>
+                <button id="button2" onclick="send2()">Turn OFF</button><br>
+                LED State: <span id="state2">NA</span>
             </div>
         </center>
     </main>
@@ -89,11 +89,11 @@
         crossorigin="anonymous"></script>
     <script>
         var c = 0;
-        function send() {
+        function send1() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("state").innerHTML = this.responseText;
+                    document.getElementById("state1").innerHTML = this.responseText;
                 }
             };
             xhttp.open("GET", "Led1?state1=" + c, true);
@@ -111,14 +111,14 @@
 
         }
         var x = 0;
-        function send1() {
+        function send2() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("state1").innerHTML = this.responseText;
+                    document.getElementById("state2").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "Led2?state1=" + x, true);
+            xhttp.open("GET", "Led2?state2=" + x, true);
             xhttp.send();
             if (x == 0) {
 
