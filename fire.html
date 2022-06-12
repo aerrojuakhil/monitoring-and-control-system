@@ -18,8 +18,11 @@
     }
 
     @media screen and (max-width: 480px) {
+        body{
+            width: fit-content;
+        }
         main {
-            min-height: calc(100vh - 112px - 64px);
+            min-height: calc(100vh - 40px - 64px);
         }
     }
 </style>
@@ -57,6 +60,9 @@
             <h2 style="padding: 50px 0px 0px 40px;">
                 Fire Detection: <span id="flame_val"></span><br><br>
             </h2>
+            <center>
+            <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+                src="https://thingspeak.com/channels/1764359/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&timescale=10&type=line"></iframe></center>
         </div>
     </main>
     <footer>
@@ -80,11 +86,15 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("flame_val").innerHTML =
-                        this.responseText;
+                    parsed = JSON.parse(this.response)
+                    document.getElementById("flame_val").innerHTML = parsed['feeds'][0]['field1'];
+                    console.log(parsed['feeds'][0]['field1'])
+                    if (parsed['feeds'][0]['field1'] > 60) {
+                        alert("Danger: Received " + parsed['feeds'][0]['field1'])
+                    }
                 }
             };
-            xhttp.open("GET", "flame", true);
+            xhttp.open("GET", "https://api.thingspeak.com/channels/1764359/fields/1.json?api_key=FQ0BUMW3ORBT6KYH&results=1", true);
             xhttp.send();
         }
     </script>
