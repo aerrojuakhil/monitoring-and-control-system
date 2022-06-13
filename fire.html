@@ -16,14 +16,18 @@
     main {
         min-height: calc(100vh - 56px - 64px);
     }
+    h2{
+        padding: 50px 0px 0px 40px;
+    }
     @media screen and (max-width: 480px) {
         main {
             min-height: calc(100vh - 112px - 64px);
         }
-        iframe{
-            width: 95%;
-            margin: 0px 10px;
+        h2{
+            font-size: 20px;
+            padding: 50px 0px 0px 20px;
         }
+        
     }
 </style>
 
@@ -57,7 +61,7 @@
 
     <main>
         <div>
-            <h2 style="padding: 50px 0px 0px 40px;">
+            <h2>
                 Fire Detection: <span id="flame_val"></span><br><br>
             </h2>
         </div>
