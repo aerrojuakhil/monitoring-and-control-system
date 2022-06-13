@@ -11,8 +11,6 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Monitoring and Control System</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="images/fav.png">
 </head>
 <style>
     main {
@@ -73,20 +71,27 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script>
-        setInterval(function() {
-      getData();
-    }, 1000); 
-    function getData() {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("pir_val").innerHTML =
-          this.responseText;
+        setInterval(function () {
+            getData();
+        }, 1000);
+        function getData() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText)
+                    document.getElementById("pir_val").innerHTML = this.responseText;
+                    if (this.responseText == "Motion Detected") {
+                        alert(this.responseText);
+                        document.getElementById("pir_val").style.color = "red";
+                    }
+                    else{
+                        document.getElementById("pir_val").style.color = "black";
+                    }
+                }
+            };
+            xhttp.open("GET", "https://blynk.cloud/external/api/get?token=PiICxN5NNt2JWKLel25IWy6IFTPilbYU&v3", true);
+            xhttp.send();
         }
-      };
-      xhttp.open("GET", "pir", true);
-      xhttp.send();
-    }
     </script>
 </body>
 
