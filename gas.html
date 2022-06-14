@@ -87,7 +87,7 @@
                     parsed = JSON.parse(this.response)
                     document.getElementById("gas_val").innerHTML = parsed;
                     console.log(parsed)
-                    if (parsed > 250) {
+                    if (parsed > 750) {
                         alert("Danger: Received " + parsed);
                         document.getElementById("gas_val").style.color = "red";
                     }
