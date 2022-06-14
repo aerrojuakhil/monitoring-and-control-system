@@ -88,12 +88,13 @@
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     console.log(this.responseText)
-                    document.getElementById("flame_val").innerHTML = this.responseText;
-                    if (this.responseText == "Fire Detected") {
+                    if (this.responseText == 0) {
                         alert(this.responseText)
+                        document.getElementById("flame_val").innerHTML = "Fire Detected";
                         document.getElementById("flame_val").style.color = "red";
                     }
                     else{
+                        document.getElementById("flame_val").innerHTML = "No Fire Detected";
                         document.getElementById("flame_val").style.color = "black";
                     }
                 }
