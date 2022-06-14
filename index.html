@@ -109,8 +109,9 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    parsed = JSON.parse(this.response)
-                    console.log(parsed)
+                    parsed = JSON.parse(this.response);
+                    console.log("New Line");
+                    console.log(parsed);
                     if (parsed == 0) {
                         document.getElementById("button1").innerHTML = "Turn ON";
                         document.getElementById("button1").style.backgroundColor = "red";
