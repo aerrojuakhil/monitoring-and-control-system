@@ -109,15 +109,17 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    parsed = JSON.parse(this.response);
-                    console.log("New Line");
-                    console.log(parsed);
+                    parsed = this.response;
+                    console.log("New Line")
+                    console.log(parsed)
                     if (parsed == 0) {
                         document.getElementById("button1").innerHTML = "Turn ON";
+                        document.getElementById("state1").innerHTML = "Led is off";
                         document.getElementById("button1").style.backgroundColor = "red";
                     }
                     else if (parsed == 1) {
                         document.getElementById("button1").innerHTML = "Turn Off";
+                        document.getElementById("state1").innerHTML = "Led is on";
                         document.getElementById("button1").style.backgroundColor = "green";
                     }
                 }
@@ -150,14 +152,16 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    parsed = JSON.parse(this.response)
+                    parsed = this.response;
                     console.log(parsed)
                     if (parsed == 0) {
                         document.getElementById("button2").innerHTML = "Turn ON";
+                        document.getElementById("state2").innerHTML = "Led is off";
                         document.getElementById("button2").style.backgroundColor = "red";
                     }
                     else if (parsed == 1) {
                         document.getElementById("button2").innerHTML = "Turn Off";
+                        document.getElementById("state2").innerHTML = "Led is on";
                         document.getElementById("button2").style.backgroundColor = "green";
                     }
                 }
