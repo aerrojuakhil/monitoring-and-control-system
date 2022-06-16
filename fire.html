@@ -89,9 +89,9 @@
                 if (this.readyState == 4 && this.status == 200) {
                     console.log(this.responseText)
                     if (this.responseText == 1) {
-                        alert("Fire Detected")
                         document.getElementById("flame_val").innerHTML = "Fire Detected";
                         document.getElementById("flame_val").style.color = "red";
+                        alert("Fire Detected");
                     }
                     else{
                         document.getElementById("flame_val").innerHTML = "No Fire Detected";
