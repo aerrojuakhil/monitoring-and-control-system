@@ -86,9 +86,9 @@
                 if (this.readyState == 4 && this.status == 200) {
                     console.log(this.responseText)
                     if (this.responseText == 1) {
-                        alert("Motion Detected");
                         document.getElementById("pir_val").innerHTML = "Motion Detected";
                         document.getElementById("pir_val").style.color = "red";
+                        alert("Motion Detected");
                     }
                     else{
                         document.getElementById("pir_val").innerHTML = "No Motion Detected";
