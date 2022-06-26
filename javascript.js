@@ -133,25 +133,3 @@ var c = 1;
             xhttp.open("GET", "https://blynk.cloud/external/api/get?token=PiICxN5NNt2JWKLel25IWy6IFTPilbYU&v2", true);
             xhttp.send();
         }
-        setInterval(function () {
-            getpir();
-        }, 1000);
-        function getpir() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    console.log(this.responseText)
-                    if (this.responseText == 1) {
-                        alert("Motion Detected");
-                        document.getElementById("pir_val").innerHTML = "Motion Detected";
-                        document.getElementById("pir_val").style.color = "red";
-                    }
-                    else{
-                        document.getElementById("pir_val").innerHTML = "No Motion Detected";
-                        document.getElementById("pir_val").style.color = "black";
-                    }
-                }
-            };
-            xhttp.open("GET", "https://blynk.cloud/external/api/get?token=PiICxN5NNt2JWKLel25IWy6IFTPilbYU&v3", true);
-            xhttp.send();
-        }
