@@ -16,10 +16,8 @@ function getflame() {
                 document.getElementById("flame_val").style.color = "red";
             }
             else {
-                window.onload = function() {
-                document.getElementById("flame_val").innerHTML = "No Fire Detected";
-                document.getElementById("flame_val").style.color = "black";
-                }
+                    document.getElementById("flame_val").innerHTML = "No Fire Detected";
+                    document.getElementById("flame_val").style.color = "black";
             }
         }
     };
@@ -34,19 +32,14 @@ function getgas() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             parsed = JSON.parse(this.response)
-            window.onload = function () {
                 document.getElementById("gas_val").innerHTML = parsed;
-            }
             console.log(parsed)
             if (parsed > 665) {
                 alert("Danger: Received " + parsed);
                 document.getElementById("gas_val").style.color = "red";
             }
             else {
-                window.onload = function () {
                     document.getElementById("gas_val").style.color = "black";
-                }
-
             }
         }
     };
