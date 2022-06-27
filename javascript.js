@@ -30,8 +30,6 @@ var c = 1;
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     parsed = this.response;
-                    console.log("New Line")
-                    console.log(parsed)
                     if (parsed == 0) {
                         document.getElementById("button1").innerHTML = "Turn ON";
                         document.getElementById("state1").innerHTML = "Led is off";
@@ -73,7 +71,6 @@ var c = 1;
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     parsed = this.response;
-                    console.log(parsed)
                     if (parsed == 0) {
                         document.getElementById("button2").innerHTML = "Turn ON";
                         document.getElementById("state2").innerHTML = "Led is off";
@@ -96,7 +93,6 @@ var c = 1;
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    console.log(this.responseText)
                     if (this.responseText == 1) {
                         alert("Fire Detected")
                         document.getElementById("flame_val").innerHTML = "Fire Detected";
@@ -120,7 +116,6 @@ var c = 1;
                 if (this.readyState == 4 && this.status == 200) {
                     parsed = JSON.parse(this.response)
                     document.getElementById("gas_val").innerHTML = parsed;
-                    console.log(parsed)
                     if (parsed > 665) {
                         alert("Danger: Received " + parsed);
                         document.getElementById("gas_val").style.color = "red";
